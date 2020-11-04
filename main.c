@@ -4,7 +4,7 @@
 
 int main()
 {
-    char *texte = "Alice.txt";
+    char *texte = "text/Alice.txt";
     ConvertTextToBin(texte);
     printf("%d\n", CharNumber(texte));
     printf("%d\n", CharNumber("Output.txt"));
