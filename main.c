@@ -7,6 +7,6 @@ int main()
     char *texte = "text/Alice.txt";
     ConvertTextToBin(texte);
     printf("%d\n", CharNumber(texte));
-    printf("%d\n", CharNumber("Output.txt"));
+    printf("%d\n", CharNumber("text/Output.txt"));
     return 0;
 }

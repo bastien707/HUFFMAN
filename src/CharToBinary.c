@@ -67,7 +67,7 @@ void ConvertTextToBin(char* texte)
 {
     FILE *OutPut, *Texte = NULL;
     Texte = fopen(texte, "r"); // open texte file
-    OutPut = fopen("Output.txt", "w"); // open output file (empty)
+    OutPut = fopen("text/Output.txt", "w"); // open output file (empty)
     int c = 0;
     int i = 0;
 
