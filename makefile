@@ -19,7 +19,7 @@ CharToBinary.o : src/CharToBinary.c
 		$(CC) -o CharToBinary.o src/CharToBinary.c $(CFLAGS)
 
 clean:
-	rm -rf *.o
+	rm -rf $(OBJ)
 
 mrproper : clean
 	rm -rf $(EXE)
