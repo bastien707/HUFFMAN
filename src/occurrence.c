@@ -2,12 +2,15 @@
 #include <stdlib.h>
 #include "../include/occurrence.h"
 
+
+
 /**
  * @brief Create a Element object
  * 
  * @param letter 
  * @return Element* 
  */
+
 Element *create_Element(char letter)
 {
     Element *n_e = malloc(sizeof(Element));
@@ -18,23 +21,7 @@ Element *create_Element(char letter)
     return n_e;
 }
 
-/**
- * @brief verify if a list is NULL
- * @note return 0 if true , 1 otherwise
- * @param list 
- * @return int 
- */
-int isEmpty(Element *list)
-{
-    if (list == NULL)
-    {
-        return 0;
-    }
-    else
-    {
-        return 1;
-    }
-}
+
 
 /**
  * @brief  add one occurrence in the list if the letter exist, else,
@@ -43,35 +30,41 @@ int isEmpty(Element *list)
  * @param letter 
  * @param list 
  */
+
 void add_occ(char letter, Element **list)
 {
-    if (isEmpty(*list) != 0)
+    if ((*list) != NULL)
     {
         Element *temp = (*list);
-        int cpt = 0;
+        int counter = 0;
         while (temp->next != NULL)
         {
             if (temp->letter == letter) // if letter are equal
             {
                 temp->occ += 1; // just add an occurrence
-                cpt++;
+                counter++;
             }
             temp = temp->next;
         }
-        if (cpt == 0)
-        {                                          // if the cpt = 0 it mean that the letter is not in the list
+        if (counter == 0)
+        {                                          // if the counter = 0 it mean that the letter is not in the list
             Element *n_e = create_Element(letter); // so we create a new element in a list
             n_e->next = (*list);
             (*list) = n_e; // at the begginning
         }
     }
 }
+
+
+
+
 /**
  * @brief read text file and use add_occ to 
  * add letter by letter an occurence
  * @param texte 
  * @return Element* 
  */
+
 Element *occurrence(char *texte)
 {
 
@@ -102,6 +95,10 @@ Element *occurrence(char *texte)
     fclose(Texte);
     return list;
 }
+
+
+
+
 /**
  * @brief return size of a list, but -1 to 
  * avoid an EOF char
@@ -109,21 +106,24 @@ Element *occurrence(char *texte)
  * @param l 
  * @return int 
  */
+
 int list_size(Element *l)
 {
     if (l == NULL)
-        return -1;
+        return -1; // -1 avoid false count instead of 0
     else
     {
         return (1 + list_size(l->next));
     }
 }
 
+
 /**
  * @brief print a list while temp->next != NULL
  * @note print letter and number of occurrence
  * @param list 
  */
+
 void print_list(Element *list)
 {
     Element *temp = list;
@@ -134,13 +134,3 @@ void print_list(Element *list)
     }
 }
 
-int main(void)
-{
-    char *texte = "../text/Alice.txt";
-    Element *list = NULL;
-    list = occurrence(texte);
-    print_list(list);
-    int a = list_size(list);
-    printf("taille : %d\n", a);
-    return 0;
-}
