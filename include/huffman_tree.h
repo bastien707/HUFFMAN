@@ -27,9 +27,13 @@ List_Node* create_list_node_from_element(Element* list);
 
 Node* huffman_tree(List_Node* list_node);
 
-Node* create_Node(List_Node* min1, List_Node* min2);
+Node* create_Node(int min1,int min2);
 
 List_Node* create_list_node(Node* new_node);
+
+void Add_node_beg(List_Node** list_node,Node* NODE);
+
+void trees_log_parents_after_children(Node* tree);
 
 
 #endif
