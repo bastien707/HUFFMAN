@@ -37,15 +37,16 @@ void list_remove_node(List_Node **list_node, List_Node *min_node)
     }
 }
 
-Node *create_Node(int min1, int min2)
+Node *create_Node(List_Node *min1, List_Node *min2)
 {
 
     Node *new_node = (Node *)malloc(sizeof(Node));
-    new_node->left = NULL;
-    new_node->right = NULL;
-    new_node->occ = (min1 + min2);
-    new_node->letter = '/'; //invisible letter
+    new_node->occ = (min1->data->occ + min2->data->occ);
+    new_node->letter = '\0'; //invisible letter
 
+    new_node->left = min2->data;
+    new_node->right = min1->data; // right before left but idk why
+    
     return new_node;
 }
 
@@ -85,12 +86,12 @@ List_Node *convert_elem_to_Node(Element *list)
 
     List_Node *list_node = create_list_node_from_element(list);
     List_Node *temp_liste = list_node;
-    Element *temp = list->next;
+    Element *temp = list->next; // list->next avoid to get twice same node
 
-    while (temp->next != NULL) // avoid to get twice equal node
+    while (temp->next != NULL) // first while recover element by element and convert into Node until the end
     {
         List_Node *n_list_node = create_list_node_from_element(temp);
-        while (temp_liste->next != NULL)
+        while (temp_liste->next != NULL) // second while browse list_node until the end to add at the end the new node
         {
             temp_liste = temp_liste->next;
         }
@@ -108,14 +109,14 @@ void Add_node_beg(List_Node **list_node, Node *NODE)
     (*list_node) = temp_list;
 }
 
-void trees_log_parents_after_children(Node *huffman)
+void trees_log_parents_after_children(Node *tree)
 {
-    if (huffman != NULL)
+    if (tree != NULL)
     {
-
-        printf("%d\n", huffman->occ);
-        trees_log_parents_after_children(huffman->left);
-        trees_log_parents_after_children(huffman->right);
+        printf("%d\n", tree->occ);
+        trees_log_parents_after_children(tree->left);
+        trees_log_parents_after_children(tree->right);
+        
     }
 }
 
@@ -128,33 +129,15 @@ Node *huffman_tree(List_Node *list_node)
     {
         min1 = min_list_node(list_node);
         list_remove_node(&list_node, min1);
-        printf("min1 : %d\n", min1->data->occ);
+        
         min2 = min_list_node(list_node);
         list_remove_node(&list_node, min2);
-        printf("min2 : %d\n", min2->data->occ);
         
-        new_node = create_Node(min1->data->occ, min2->data->occ);
-         
-        new_node->left = min1->data;
-        new_node->right = min2->data;
-        
-        printf("nn %d nl %d nr %d\n", new_node->occ, new_node->left->occ, new_node->right->occ);
-        Add_node_beg(&list_node, new_node);
-        
-        printf("START\n");
-        List_Node *temp = list_node;
-        while (temp != NULL)
-        {
-            printf("%c %d\n", temp->data->letter, temp->data->occ);
-            temp = temp->next;
-        }
-        printf("END\n");
-
+        new_node = create_Node(min1, min2);
+        Add_node_beg(&list_node, new_node);  
     }
-
     return new_node;
 }
-
 
 int main(void)
 {
@@ -162,30 +145,8 @@ int main(void)
     char *texte = "../text/Alice.txt";
     Element *list = occurrence(texte);
     List_Node *list_node = convert_elem_to_Node(list);
-    /*List_Node* temp = list_node;
-    int cpt = 0;
-    while(temp != NULL){
-        printf("%c %d\n", temp->data->letter, temp->data->occ);
-        temp = temp->next;
-        cpt++;
-    }*/
-
-
     Node *huffman = NULL;
     huffman = huffman_tree(list_node);
     trees_log_parents_after_children(huffman);
-
-    /*
-    List_Node* temp = list_node;
-    int cpt = 0;
-    while(temp->next != NULL){
-        printf("%c %d\n", temp->data->letter, temp->data->occ);
-        temp = temp->next;
-        cpt++;
-    }
-
-    printf("cpt = %d\n", cpt);
-    */
-
     return 0;
 }
