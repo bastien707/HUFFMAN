@@ -8,15 +8,15 @@ List_Node *min_list_node(List_Node *list_node)
     {
         List_Node *min_node = list_node;
         List_Node *temp = list_node;
-        while (temp != NULL)
+        while (temp != NULL) // goes to the next element until the end
         {
-            if (temp->data->occ < min_node->data->occ)
+            if (temp->data->occ < min_node->data->occ) // if we've found a List_Node min, we appoint it as the new minimum
             {
                 min_node = temp;
             }
             temp = temp->next;
         }
-        return min_node;
+        return min_node; // Once the list has been browse, we return the minimum
     }
     return NULL;
 }
@@ -41,12 +41,12 @@ Node *create_Node(List_Node *min1, List_Node *min2)
 {
 
     Node *new_node = (Node *)malloc(sizeof(Node));
-    new_node->occ = (min1->data->occ + min2->data->occ);
-    new_node->letter = '\0'; //invisible letter
+    new_node->occ = (min1->data->occ + min2->data->occ); // new node occurence is the sum of both minimum occ
+    new_node->letter = '\0';                             //invisible letter
 
-    new_node->left = min2->data;
-    new_node->right = min1->data; // right before left but idk why
-    
+    new_node->left = min2->data;  // source of the huffman tree bug is here
+    new_node->right = min1->data; // if we invert these lines, we don't get an huffman tree
+    //...still looking for the reason why
     return new_node;
 }
 
@@ -63,8 +63,8 @@ Node *create_node_from_element(Element *element)
 
 List_Node *create_list_node(Node *new_node)
 {
-    List_Node *new_list_n = (List_Node *)malloc(sizeof(List_Node));
-    new_list_n->data = new_node;
+    List_Node *new_list_n = (List_Node *)malloc(sizeof(List_Node)); // memory allocation
+    new_list_n->data = new_node;                                    // data of the List_Node is a Node
     new_list_n->next = NULL;
 
     return new_list_n;
@@ -72,10 +72,14 @@ List_Node *create_list_node(Node *new_node)
 
 List_Node *create_list_node_from_element(Element *list)
 {
-
-    Node *new_n = create_node_from_element(list);
-    List_Node *new_list_n = (List_Node *)malloc(sizeof(List_Node));
-    new_list_n->data = new_n;
+    if (list == NULL)
+    {
+        printf("From : create_list_node_from_element\nList of element is NULL, please retry with a no-NULL List.\n");
+        return NULL;
+    }
+    Node *new_n = create_node_from_element(list);                   // recover first element and convert it into a node
+    List_Node *new_list_n = (List_Node *)malloc(sizeof(List_Node)); // memory allocation
+    new_list_n->data = new_n;                                       // fill the data ( who is a node) of the new List_Node
     new_list_n->next = NULL;
 
     return new_list_n;
@@ -83,8 +87,13 @@ List_Node *create_list_node_from_element(Element *list)
 
 List_Node *convert_elem_to_Node(Element *list)
 {
+    if (list == NULL)
+    {
+        printf("From : convert_elem_to_Node\nList of element is NULL, please retry with a no-NULL List.\n");
+        return NULL;
+    }
 
-    List_Node *list_node = create_list_node_from_element(list);
+    List_Node *list_node = create_list_node_from_element(list); // create List_Node with a first element from list of element
     List_Node *temp_liste = list_node;
     Element *temp = list->next; // list->next avoid to get twice same node
 
@@ -98,25 +107,24 @@ List_Node *convert_elem_to_Node(Element *list)
         temp_liste->next = n_list_node;
         temp = temp->next;
     }
-    return list_node;
+    return list_node; // return list of Liste_Node
 }
 
 void Add_node_beg(List_Node **list_node, Node *NODE)
 {
 
-    List_Node *temp_list = create_list_node(NODE);
-    temp_list->next = (*list_node);
+    List_Node *temp_list = create_list_node(NODE); // create a List_Node with the new_node (NODE) in data
+    temp_list->next = (*list_node);                // add the List_Node at the beginning of the list
     (*list_node) = temp_list;
 }
 
-void trees_log_parents_after_children(Node *tree)
+void trees_log_parents_before_children(Node *tree)
 {
     if (tree != NULL)
     {
-        printf("%d\n", tree->occ);
-        trees_log_parents_after_children(tree->left);
-        trees_log_parents_after_children(tree->right);
-        
+        printf("%d\n", tree->occ); // log in perfix order
+        trees_log_parents_before_children(tree->left);
+        trees_log_parents_before_children(tree->right);
     }
 }
 
@@ -125,28 +133,21 @@ Node *huffman_tree(List_Node *list_node)
     List_Node *min1, *min2 = NULL;
     Node *new_node = NULL;
 
-    while (list_node->next != NULL)
+    if (list_node == NULL)
     {
-        min1 = min_list_node(list_node);
-        list_remove_node(&list_node, min1);
-        
-        min2 = min_list_node(list_node);
-        list_remove_node(&list_node, min2);
-        
-        new_node = create_Node(min1, min2);
-        Add_node_beg(&list_node, new_node);  
+        printf("From : huffman_tree\nList_Node is NULL, please retry with a no-NULL List.\n");
+        return NULL;
     }
-    return new_node;
-}
+    while (list_node->next != NULL) // while the list has more that 1 node we keep it up
+    {
+        min1 = min_list_node(list_node);    // return first minimum
+        list_remove_node(&list_node, min1); // remove the first minimum from the list
 
-int main(void)
-{
+        min2 = min_list_node(list_node);    // return second minimum
+        list_remove_node(&list_node, min2); // remove the second minimum from the list
 
-    char *texte = "../text/Alice.txt";
-    Element *list = occurrence(texte);
-    List_Node *list_node = convert_elem_to_Node(list);
-    Node *huffman = NULL;
-    huffman = huffman_tree(list_node);
-    trees_log_parents_after_children(huffman);
-    return 0;
+        new_node = create_Node(min1, min2); // create new node with both minimum
+        Add_node_beg(&list_node, new_node); // add the new node in the list of List_Node
+    }
+    return new_node; // return the last node in the list that is the huffman tree
 }
