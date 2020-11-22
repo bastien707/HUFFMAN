@@ -81,11 +81,13 @@ Element *occurrence(char *texte)
             {
                 break;
             }
-            if ((list) == NULL)
+            if ((list) == NULL) // if the list is NULL we create it, 
             {
                 list = create_Element(c);
             }
-            add_occ(c, &list);
+            if(c != '\n'){ // avoid to add the '\n' occurrence
+                add_occ(c, &list);
+            }
         }
     }
     else if (Texte == NULL)
