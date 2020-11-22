@@ -1,16 +1,30 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "include/CharToBinary.h"
-#include "include/occurrence.h"
+#include "include/huffman_tree.h"
 
+/**
+ * @brief create an huffman tree and display it with a log function
+ * @note PART 2.2
+ */
 
+int main(void)
+{
 
+    char *texte = "text/Alice.txt";
+    Element *list = occurrence(texte);
+    List_Node *list_node = convert_elem_to_Node(list);
+    Node *huffman = NULL;
+    huffman = huffman_tree(list_node);
+    trees_log_parents_before_children(huffman);
+    return 0;
+}
 
 /**
  * @brief main who create a list with all occurence from a text file.
  * @note PART 2.1
  * @return int 
  */
+/*
 int main(void)
 {
     char *texte = "text/Alice.txt";
@@ -21,9 +35,10 @@ int main(void)
     printf("size :  %d\n", a);
     return 0;
 }
+*/
 
 /**
- * @brief main who read a text and convert it to bin
+ * @brief main who read a text and convert it into bin
  * in an output file
  * @note PART 1.1 & 1.2
  * @return int 
