@@ -2,7 +2,13 @@
 
 #include "huffman_tree.h"
 
-/// return an array coded with huffman
-void huffman_dictionary(Node* tree, char **DictionaryArray, char array[], int index );
+/// create a dictionary from an huffman tree
+void HuffmanDictionary(Node* root, char arr[], int top);
+
+/// this function return the depth of any tree
+int depth(Node* tree);
+
+/// Write an array in the dictionary
+void WriteArray(char array[], int size, Node* tree);
 
 #endif
