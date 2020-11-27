@@ -7,7 +7,7 @@
  * @note PART 2.3
  * @return int 
  */
-/*
+
 int main(void)
 {
 
@@ -21,7 +21,6 @@ int main(void)
 
     return 0;
 }
-*/
 
 /**
  * @brief create an huffman tree and display it with a log function
@@ -64,7 +63,7 @@ int main(void)
  * @note PART 1.1 & 1.2
  * @return int 
  */
-
+/*
 int main()
 {
     char *texte = "text/Alice.txt";
@@ -72,4 +71,4 @@ int main()
     printf("%d\n", CharNumber(texte));
     printf("%d\n", CharNumber("text/Output.txt"));
     return 0;
-}
+}*/
