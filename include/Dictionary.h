@@ -7,7 +7,7 @@
 #ifndef DICTIONARY
 #define DICTIONARY
 
-#include "huffman_tree.h"
+#include "Huffman_tree.h"
 
 /**
  * @brief create a dictionary from an huffman tree
