@@ -3,14 +3,6 @@
 #include "../include/occurrence.h"
 
 
-
-/**
- * @brief Create a Element object
- * 
- * @param letter 
- * @return Element* 
- */
-
 Element *create_Element(char letter)
 {
     Element *n_e = malloc(sizeof(Element));
@@ -20,16 +12,6 @@ Element *create_Element(char letter)
 
     return n_e;
 }
-
-
-
-/**
- * @brief  add one occurrence in the list if the letter exist, else,
- * we create an element at the beginning of the list
- * @note so it modify a list
- * @param letter 
- * @param list 
- */
 
 void add_occ(char letter, Element **list)
 {
@@ -54,16 +36,6 @@ void add_occ(char letter, Element **list)
         }
     }
 }
-
-
-
-
-/**
- * @brief read text file and use add_occ to 
- * add letter by letter an occurence
- * @param texte 
- * @return Element* 
- */
 
 Element *occurrence(char *texte)
 {
@@ -98,17 +70,6 @@ Element *occurrence(char *texte)
     return list;
 }
 
-
-
-
-/**
- * @brief return size of a list, but -1 to 
- * avoid an EOF char
- * 
- * @param l 
- * @return int 
- */
-
 int list_size(Element *l)
 {
     if (l == NULL)
@@ -118,13 +79,6 @@ int list_size(Element *l)
         return (1 + list_size(l->next));
     }
 }
-
-
-/**
- * @brief print a list while temp->next != NULL
- * @note print letter and number of occurrence
- * @param list 
- */
 
 void print_list(Element *list)
 {
