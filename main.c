@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "include/dictionary.h"
+#include "include/Dictionary.h"
 
 /**
  * @brief create the dictionary

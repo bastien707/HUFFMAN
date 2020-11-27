@@ -4,7 +4,7 @@
 
 CC = gcc
 EXE = exec
-OBJ = main.o src/CharToBinary.o src/occurrence.o src/huffman_tree.o src/dictionary.o
+OBJ = main.o src/CharToBinary.o src/Occurrence.o src/huffman_tree.o src/Dictionary.o
 CFLAGS = -Wall -g  
 
 all: $(EXE) clean
@@ -18,14 +18,14 @@ main.o : main.c
 CharToBinary.o : src/CharToBinary.c
 		$(CC) -o CharToBinary.o src/CharToBinary.c $(CFLAGS)
 
-occurrence.o : src/occurrence.c
-		$(CC) -o occurrence.o src/occurrence.c $(CFLAGS)
+Occurrence.o : src/Occurrence.c
+		$(CC) -o Occurrence.o src/Occurrence.c $(CFLAGS)
 
 huffman_tree.o : src/huffman_tree.c
 		$(CC) -o huffman_tree.o src/huffman_tree.c $(CFLAGS)
 
-dictionary.o : src/dictionary.c
-		$(CC) -o dictionary.o src/dictionary.c $(CFLAGS)
+Dictionary.o : src/Dictionary.c
+		$(CC) -o Dictionary.o src/Dictionary.c $(CFLAGS)
 		
 clean:
 	rm -rf $(OBJ)
