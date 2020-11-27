@@ -2,12 +2,6 @@
 #include <stdlib.h>
 #include "../include/CharToBinary.h"
 
-/**
- * @brief 
- * convert a char to his binary form
- * @param c 
- * @return char* that is the array compound of binary number
- */
 char *CharToBinary(char c)
 {
     int dividend = c;
@@ -33,11 +27,6 @@ char *CharToBinary(char c)
     return bin; // binary array
 }
 
-/**
- * @brief it print an array only 8 bits array
- * 
- * @param array 
- */
 void printBinArray(char *array)
 {
     for (int u = 0; u < 8; u++)
@@ -46,12 +35,6 @@ void printBinArray(char *array)
     }
 }
 
-/**
- * @brief this function write an array in a file.txt
- * @note it only recover array of 8 bits
- * @param file file in wich we wanna write 
- * @param array array of size 7 (0,1,2,3,4,5,6,7)
- */
 void WriteAnArray(FILE *file, char *array)
 {
     if (file != NULL)
