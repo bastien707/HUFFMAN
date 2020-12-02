@@ -3,18 +3,36 @@
 #include "include/Dictionary.h"
 #include "include/Encoding.h"
 
+
+int main(){
+
+    char *texte = "text/Alice.txt";
+    int index = 0;
+    
+    ConvertTextToBin(texte);
+    Element *list = occurrence(texte);
+    List_Node *list_node = convert_elem_to_Node(list);
+    Node *huffman = huffman_tree(list_node);
+    
+    char *array = malloc(sizeof(char)* depth(huffman));
+    HuffmanDictionary(huffman, array, index);
+    encoding();
+
+    return 0;
+
+}
 /**
  * @brief create the huffman code
  * @note PART 2.4 
  * @return int 
  */
-
+/*
 int main(void)
 {
     encoding();
     return 0;
 }
-
+*/
 
 /**
  * @brief create the dictionary
