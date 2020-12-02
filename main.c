@@ -1,13 +1,27 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "include/Dictionary.h"
+#include "include/Encoding.h"
+
+/**
+ * @brief create the huffman code
+ * @note PART 2.4 
+ * @return int 
+ */
+
+int main(void)
+{
+    encoding();
+    return 0;
+}
+
 
 /**
  * @brief create the dictionary
  * @note PART 2.3
  * @return int 
  */
-
+/*
 int main(void)
 {
 
@@ -16,12 +30,12 @@ int main(void)
     List_Node *list_node = convert_elem_to_Node(list);
     Node *huffman = huffman_tree(list_node);
     int index = 0;
-    char array[depth(huffman)];
+    char *array = malloc(sizeof(char)* depth(huffman));
     HuffmanDictionary(huffman, array, index);
 
     return 0;
 }
-
+*/
 /**
  * @brief create an huffman tree and display it with a log function
  * @note PART 2.2
