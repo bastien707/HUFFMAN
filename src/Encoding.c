@@ -33,7 +33,7 @@ void write_huffman_text(FILE *DIC, char c)
 void encoding()
 {
     FILE *Dictionary, *Texte = NULL;
-    Texte = fopen("text/Alice.txt", "r");           // open text file
+    Texte = fopen("text/Input.txt", "r");           // open text file
     Dictionary = fopen("text/Dictionary.txt", "r"); // open an encode file (empty)
     int cur = 0;
     unsigned i = 0;

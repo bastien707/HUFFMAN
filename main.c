@@ -6,7 +6,7 @@
 
 int main(){
 
-    char *texte = "text/Alice.txt";
+    char *texte = "text/Input.txt";
     int index = 0;
     
     ConvertTextToBin(texte);
@@ -43,7 +43,7 @@ int main(void)
 int main(void)
 {
 
-    char *texte = "text/Alice.txt";
+    char *texte = "text/Input.txt";
     Element *list = occurrence(texte);
     List_Node *list_node = convert_elem_to_Node(list);
     Node *huffman = huffman_tree(list_node);
@@ -62,7 +62,7 @@ int main(void)
 int main(void)
 {
 
-    char *texte = "text/Alice.txt";
+    char *texte = "text/Input.txt";
     Element *list = occurrence(texte);
     List_Node *list_node = convert_elem_to_Node(list);
     Node *huffman = NULL;
@@ -79,7 +79,7 @@ int main(void)
 /*
 int main(void)
 {
-    char *texte = "text/Alice.txt";
+    char *texte = "text/Input.txt";
     Element *list = NULL;
     list = occurrence(texte);
     print_list(list);
@@ -98,7 +98,7 @@ int main(void)
 /*
 int main()
 {
-    char *texte = "text/Alice.txt";
+    char *texte = "text/Input.txt";
     ConvertTextToBin(texte);
     printf("%d\n", CharNumber(texte));
     printf("%d\n", CharNumber("text/Output.txt"));
