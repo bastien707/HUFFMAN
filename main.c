@@ -1,11 +1,15 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 #include "include/Dictionary.h"
 #include "include/Encoding.h"
 
 
 int main(){
 
+    double time_spent = 0.0;
+    clock_t begin = clock();
+
     char *texte = "text/Input.txt";
     int index = 0;
     
@@ -13,94 +17,15 @@ int main(){
     Element *list = occurrence(texte);
     List_Node *list_node = convert_elem_to_Node(list);
     Node *huffman = huffman_tree(list_node);
-    
     char *array = malloc(sizeof(char)* depth(huffman));
     HuffmanDictionary(huffman, array, index);
+    free(array);
     encoding();
 
+    clock_t end = clock();
+    time_spent += (double)(end - begin)/CLOCKS_PER_SEC;
+    printf("seconds : %fs\n", time_spent);
+
     return 0;
 
 }
-/**
- * @brief create the huffman code
- * @note PART 2.4 
- * @return int 
- */
-/*
-int main(void)
-{
-    encoding();
-    return 0;
-}
-*/
-
-/**
- * @brief create the dictionary
- * @note PART 2.3
- * @return int 
- */
-/*
-int main(void)
-{
-
-    char *texte = "text/Input.txt";
-    Element *list = occurrence(texte);
-    List_Node *list_node = convert_elem_to_Node(list);
-    Node *huffman = huffman_tree(list_node);
-    int index = 0;
-    char *array = malloc(sizeof(char)* depth(huffman));
-    HuffmanDictionary(huffman, array, index);
-
-    return 0;
-}
-*/
-/**
- * @brief create an huffman tree and display it with a log function
- * @note PART 2.2
- */
-/*
-int main(void)
-{
-
-    char *texte = "text/Input.txt";
-    Element *list = occurrence(texte);
-    List_Node *list_node = convert_elem_to_Node(list);
-    Node *huffman = NULL;
-    huffman = huffman_tree(list_node);
-    trees_log_parents_before_children(huffman);
-    return 0;
-}
-*/
-/**
- * @brief main who create a list with all occurence from a text file.
- * @note PART 2.1
- * @return int 
- */
-/*
-int main(void)
-{
-    char *texte = "text/Input.txt";
-    Element *list = NULL;
-    list = occurrence(texte);
-    print_list(list);
-    int a = list_size(list);
-    printf("size :  %d\n", a);
-    return 0;
-}
-*/
-
-/**
- * @brief main who read a text and convert it into bin
- * in an output file
- * @note PART 1.1 & 1.2
- * @return int 
- */
-/*
-int main()
-{
-    char *texte = "text/Input.txt";
-    ConvertTextToBin(texte);
-    printf("%d\n", CharNumber(texte));
-    printf("%d\n", CharNumber("text/Output.txt"));
-    return 0;
-}*/
