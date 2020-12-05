@@ -36,6 +36,8 @@ make clean
 
 ### Authors
 
-    Facqueur Bastien - [bastien707](https://github.com/bastien707)
+Facqueur Bastien - [bastien707](https://github.com/bastien707)
+Kylian Artu-Lequint - [KA-L](https://github.com/KA-L)
+Quentin Noiriel - [QuentinNoiriel](https://github.com/QuentinNoiriel)
 
 
