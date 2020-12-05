@@ -70,6 +70,7 @@ void ConvertTextToBin(char* texte)
             {
                 fputc('\n', OutPut);
             }
+            free(p); // memory leak cause 
         }
     }
     else
