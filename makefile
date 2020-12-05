@@ -31,7 +31,8 @@ Encoding.o : src/Encoding.c
 		$(CC) -o $@ $< $(CFLAGS)
 		
 clean:
-	rm -rf $(OBJ)
+	rm -rf $(OBJ) text/Dictionary.txt text/Encode.txt text/Output.txt
 
 mrproper : clean
 	rm -rf $(EXE)
+
