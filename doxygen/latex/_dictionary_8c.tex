@@ -1,0 +1,82 @@
+\hypertarget{_dictionary_8c}{}\section{src/\+Dictionary.c File Reference}
+\label{_dictionary_8c}\index{src/\+Dictionary.\+c@{src/\+Dictionary.\+c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}../include/\+Dictionary.\+h\char`\"{}}\newline
+Include dependency graph for Dictionary.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_dictionary_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{_dictionary_8c_ae4631a315cca72a95909724d3210a3bf}{Huffman\+Dictionary} (\hyperlink{struct_node}{Node} $\ast$tree, char array\mbox{[}$\,$\mbox{]}, int index)
+\begin{DoxyCompactList}\small\item\em create a dictionary from an huffman tree. \end{DoxyCompactList}\item 
+void \hyperlink{_dictionary_8c_a092c935ab0fde4b7a4cf4a5b047b9f52}{Write\+Array} (char array\mbox{[}$\,$\mbox{]}, int size, \hyperlink{struct_node}{Node} $\ast$tree)
+\begin{DoxyCompactList}\small\item\em Write an array in the dictionary. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{_dictionary_8c_a1e4d9bdabe290766cf72727d1de41953}{depth} (\hyperlink{struct_node}{Node} $\ast$tree)
+\begin{DoxyCompactList}\small\item\em this function return the depth of any tree. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{_dictionary_8c_a1e4d9bdabe290766cf72727d1de41953}\label{_dictionary_8c_a1e4d9bdabe290766cf72727d1de41953}} 
+\index{Dictionary.\+c@{Dictionary.\+c}!depth@{depth}}
+\index{depth@{depth}!Dictionary.\+c@{Dictionary.\+c}}
+\subsubsection{\texorpdfstring{depth()}{depth()}}
+{\footnotesize\ttfamily unsigned int depth (\begin{DoxyParamCaption}\item[{\hyperlink{struct_node}{Node} $\ast$}]{tree }\end{DoxyParamCaption})}
+
+
+
+this function return the depth of any tree. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tree} & a pointer to a tree. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+depth of the tree. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_dictionary_8c_ae4631a315cca72a95909724d3210a3bf}\label{_dictionary_8c_ae4631a315cca72a95909724d3210a3bf}} 
+\index{Dictionary.\+c@{Dictionary.\+c}!Huffman\+Dictionary@{Huffman\+Dictionary}}
+\index{Huffman\+Dictionary@{Huffman\+Dictionary}!Dictionary.\+c@{Dictionary.\+c}}
+\subsubsection{\texorpdfstring{Huffman\+Dictionary()}{HuffmanDictionary()}}
+{\footnotesize\ttfamily void Huffman\+Dictionary (\begin{DoxyParamCaption}\item[{\hyperlink{struct_node}{Node} $\ast$}]{tree,  }\item[{char}]{array\mbox{[}$\,$\mbox{]},  }\item[{int}]{index }\end{DoxyParamCaption})}
+
+
+
+create a dictionary from an huffman tree. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tree} & a pointer to an huffman tree. \\
+\hline
+{\em array} & array that recover the path to a char. \\
+\hline
+{\em index} & index for the array. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_dictionary_8c_a092c935ab0fde4b7a4cf4a5b047b9f52}\label{_dictionary_8c_a092c935ab0fde4b7a4cf4a5b047b9f52}} 
+\index{Dictionary.\+c@{Dictionary.\+c}!Write\+Array@{Write\+Array}}
+\index{Write\+Array@{Write\+Array}!Dictionary.\+c@{Dictionary.\+c}}
+\subsubsection{\texorpdfstring{Write\+Array()}{WriteArray()}}
+{\footnotesize\ttfamily void Write\+Array (\begin{DoxyParamCaption}\item[{char}]{array\mbox{[}$\,$\mbox{]},  }\item[{int}]{size,  }\item[{\hyperlink{struct_node}{Node} $\ast$}]{tree }\end{DoxyParamCaption})}
+
+
+
+Write an array in the dictionary. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em array} & array that contain a path to the char. \\
+\hline
+{\em size} & size of the array. \\
+\hline
+{\em tree} & a pointer to a tree. \\
+\hline
+\end{DoxyParams}

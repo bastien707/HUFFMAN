@@ -4,28 +4,35 @@
 
 CC = gcc
 EXE = exec
-OBJ = main.o src/CharToBinary.o src/occurrence.o src/huffman_tree.o
+OBJ = main.o src/CharToBinary.o src/Occurrence.o src/Huffman_tree.o src/Dictionary.o src/Encoding.o
 CFLAGS = -Wall -g  
 
 all: $(EXE) clean
 
 $(EXE) : $(OBJ)
-	$(CC) $(CFLAGS) -o $(EXE) $^
+	$(CC) $(CFLAGS) -o $@ $^
 
 main.o : main.c
-	$(CC) -o main.o -c main.c $(CFLAGS)
+	$(CC) -o $@ -c $< $(CFLAGS)
 
 CharToBinary.o : src/CharToBinary.c
-		$(CC) -o CharToBinary.o src/CharToBinary.c $(CFLAGS)
+		$(CC) -o $@ $< $(CFLAGS)
 
-occurrence.o : src/occurrence.c
-		$(CC) -o occurrence.o src/occurrence.c $(CFLAGS)
+Occurrence.o : src/Occurrence.c
+		$(CC) -o $@ $< $(CFLAGS)
 
-huffman_tree.o : src/huffman_tree.c
-		$(CC) -o huffman_tree.o src/huffman_tree.c $(CFLAGS)
+Huffman_tree.o : src/Huffman_tree.c
+		$(CC) -o $@ $< $(CFLAGS)
 
+Dictionary.o : src/Dictionary.c
+		$(CC) -o $@ $< $(CFLAGS)
+
+Encoding.o : src/Encoding.c
+		$(CC) -o $@ $< $(CFLAGS)
+		
 clean:
-	rm -rf $(OBJ)
+	rm -rf $(OBJ) text/Dictionary.txt text/Encode.txt text/Output.txt
 
 mrproper : clean
 	rm -rf $(EXE)
+

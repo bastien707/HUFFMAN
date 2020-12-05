@@ -1,0 +1,124 @@
+\hypertarget{_occurrence_8c}{}\section{src/\+Occurrence.c File Reference}
+\label{_occurrence_8c}\index{src/\+Occurrence.\+c@{src/\+Occurrence.\+c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}../include/\+Occurrence.\+h\char`\"{}}\newline
+Include dependency graph for Occurrence.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{_occurrence_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{struct_element}{Element} $\ast$ \hyperlink{_occurrence_8c_a7dbd8ad59e7c54573c3cc6554104ec24}{create\+\_\+\+Element} (char letter)
+\begin{DoxyCompactList}\small\item\em Create an \hyperlink{struct_element}{Element} object. \end{DoxyCompactList}\item 
+void \hyperlink{_occurrence_8c_a7cf8c3bc86fc718bc751012a3ea1bae8}{add\+\_\+occ} (char letter, \hyperlink{struct_element}{Element} $\ast$$\ast$list)
+\begin{DoxyCompactList}\small\item\em add one occurrence in the list if the letter exist, else, we create an element at the beginning of the list. \end{DoxyCompactList}\item 
+\hyperlink{struct_element}{Element} $\ast$ \hyperlink{_occurrence_8c_a3b8f8fc4b7b66f29fcd36a8e570d65c7}{occurrence} (char $\ast$texte)
+\begin{DoxyCompactList}\small\item\em read text file and use add\+\_\+occ to. add letter by letter an occurence to the list of all occurrences. \end{DoxyCompactList}\item 
+int \hyperlink{_occurrence_8c_a4a38bc5a9956d58acc78b493668f9e9c}{list\+\_\+size} (\hyperlink{struct_element}{Element} $\ast$l)
+\begin{DoxyCompactList}\small\item\em Function who return size of a list. \end{DoxyCompactList}\item 
+void \hyperlink{_occurrence_8c_a7bbb9c9a86ff13775d620292f2b29f61}{print\+\_\+list} (\hyperlink{struct_element}{Element} $\ast$list)
+\begin{DoxyCompactList}\small\item\em Function to print a list information of a list. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{_occurrence_8c_a7cf8c3bc86fc718bc751012a3ea1bae8}\label{_occurrence_8c_a7cf8c3bc86fc718bc751012a3ea1bae8}} 
+\index{Occurrence.\+c@{Occurrence.\+c}!add\+\_\+occ@{add\+\_\+occ}}
+\index{add\+\_\+occ@{add\+\_\+occ}!Occurrence.\+c@{Occurrence.\+c}}
+\subsubsection{\texorpdfstring{add\+\_\+occ()}{add\_occ()}}
+{\footnotesize\ttfamily void add\+\_\+occ (\begin{DoxyParamCaption}\item[{char}]{letter,  }\item[{\hyperlink{struct_element}{Element} $\ast$$\ast$}]{list }\end{DoxyParamCaption})}
+
+
+
+add one occurrence in the list if the letter exist, else, we create an element at the beginning of the list. 
+
+\begin{DoxyNote}{Note}
+so it modify a list. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em letter} & the char to add in the new \hyperlink{struct_element}{Element}. \\
+\hline
+{\em list} & list we modify,so need double pointer. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_occurrence_8c_a7dbd8ad59e7c54573c3cc6554104ec24}\label{_occurrence_8c_a7dbd8ad59e7c54573c3cc6554104ec24}} 
+\index{Occurrence.\+c@{Occurrence.\+c}!create\+\_\+\+Element@{create\+\_\+\+Element}}
+\index{create\+\_\+\+Element@{create\+\_\+\+Element}!Occurrence.\+c@{Occurrence.\+c}}
+\subsubsection{\texorpdfstring{create\+\_\+\+Element()}{create\_Element()}}
+{\footnotesize\ttfamily \hyperlink{struct_element}{Element}$\ast$ create\+\_\+\+Element (\begin{DoxyParamCaption}\item[{char}]{letter }\end{DoxyParamCaption})}
+
+
+
+Create an \hyperlink{struct_element}{Element} object. 
+
+\begin{DoxyNote}{Note}
+occ initialized at 1. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em letter} & the char to add in the new \hyperlink{struct_element}{Element}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Element$\ast$. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_occurrence_8c_a4a38bc5a9956d58acc78b493668f9e9c}\label{_occurrence_8c_a4a38bc5a9956d58acc78b493668f9e9c}} 
+\index{Occurrence.\+c@{Occurrence.\+c}!list\+\_\+size@{list\+\_\+size}}
+\index{list\+\_\+size@{list\+\_\+size}!Occurrence.\+c@{Occurrence.\+c}}
+\subsubsection{\texorpdfstring{list\+\_\+size()}{list\_size()}}
+{\footnotesize\ttfamily int list\+\_\+size (\begin{DoxyParamCaption}\item[{\hyperlink{struct_element}{Element} $\ast$}]{l }\end{DoxyParamCaption})}
+
+
+
+Function who return size of a list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em l,list} & of \hyperlink{struct_element}{Element}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int, the size of the list. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_occurrence_8c_a3b8f8fc4b7b66f29fcd36a8e570d65c7}\label{_occurrence_8c_a3b8f8fc4b7b66f29fcd36a8e570d65c7}} 
+\index{Occurrence.\+c@{Occurrence.\+c}!occurrence@{occurrence}}
+\index{occurrence@{occurrence}!Occurrence.\+c@{Occurrence.\+c}}
+\subsubsection{\texorpdfstring{occurrence()}{occurrence()}}
+{\footnotesize\ttfamily \hyperlink{struct_element}{Element}$\ast$ occurrence (\begin{DoxyParamCaption}\item[{char $\ast$}]{texte }\end{DoxyParamCaption})}
+
+
+
+read text file and use add\+\_\+occ to. add letter by letter an occurence to the list of all occurrences. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em texte} & file in wich we read char by char. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Element$\ast$, the list of all occurrences. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_occurrence_8c_a7bbb9c9a86ff13775d620292f2b29f61}\label{_occurrence_8c_a7bbb9c9a86ff13775d620292f2b29f61}} 
+\index{Occurrence.\+c@{Occurrence.\+c}!print\+\_\+list@{print\+\_\+list}}
+\index{print\+\_\+list@{print\+\_\+list}!Occurrence.\+c@{Occurrence.\+c}}
+\subsubsection{\texorpdfstring{print\+\_\+list()}{print\_list()}}
+{\footnotesize\ttfamily void print\+\_\+list (\begin{DoxyParamCaption}\item[{\hyperlink{struct_element}{Element} $\ast$}]{list }\end{DoxyParamCaption})}
+
+
+
+Function to print a list information of a list. 
+
+\begin{DoxyNote}{Note}
+Print letter and number of occurrence. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em list,list} & of \hyperlink{struct_element}{Element}. \\
+\hline
+\end{DoxyParams}

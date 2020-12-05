@@ -1,0 +1,219 @@
+\hypertarget{_huffman__tree_8c}{}\section{src/\+Huffman\+\_\+tree.c File Reference}
+\label{_huffman__tree_8c}\index{src/\+Huffman\+\_\+tree.\+c@{src/\+Huffman\+\_\+tree.\+c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}../include/\+Huffman\+\_\+tree.\+h\char`\"{}}\newline
+Include dependency graph for Huffman\+\_\+tree.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_huffman__tree_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{struct_list___node}{List\+\_\+\+Node} $\ast$ \hyperlink{_huffman__tree_8c_a0af5331d55b45079167aa5395b32eceb}{min\+\_\+list\+\_\+node} (\hyperlink{struct_list___node}{List\+\_\+\+Node} $\ast$list\+\_\+node)
+\begin{DoxyCompactList}\small\item\em Function to find minimum from a \hyperlink{struct_list___node}{List\+\_\+\+Node} List. \end{DoxyCompactList}\item 
+void \hyperlink{_huffman__tree_8c_acbf0d3186ab4a1b077a3f0f963bae97f}{list\+\_\+remove\+\_\+node} (\hyperlink{struct_list___node}{List\+\_\+\+Node} $\ast$$\ast$list\+\_\+node, \hyperlink{struct_list___node}{List\+\_\+\+Node} $\ast$min\+\_\+node)
+\begin{DoxyCompactList}\small\item\em Function to remove a \hyperlink{struct_list___node}{List\+\_\+\+Node}. \end{DoxyCompactList}\item 
+\hyperlink{struct_node}{Node} $\ast$ \hyperlink{_huffman__tree_8c_a9d1186428bbd983ffd985807e40c3a5a}{create\+\_\+\+Node} (\hyperlink{struct_list___node}{List\+\_\+\+Node} $\ast$min1, \hyperlink{struct_list___node}{List\+\_\+\+Node} $\ast$min2)
+\begin{DoxyCompactList}\small\item\em Function to create a node with an occurence value equal to sum of two minimum \hyperlink{struct_list___node}{List\+\_\+\+Node} occurrences. \end{DoxyCompactList}\item 
+\hyperlink{struct_node}{Node} $\ast$ \hyperlink{_huffman__tree_8c_a97a3db3427a186ef388c738c6b11910f}{create\+\_\+node\+\_\+from\+\_\+element} (\hyperlink{struct_element}{Element} $\ast$element)
+\begin{DoxyCompactList}\small\item\em Function to create a node that has been converted from an element. \end{DoxyCompactList}\item 
+\hyperlink{struct_list___node}{List\+\_\+\+Node} $\ast$ \hyperlink{_huffman__tree_8c_aaf6def10f6b6a363b0e9b254430312c7}{create\+\_\+list\+\_\+node} (\hyperlink{struct_node}{Node} $\ast$new\+\_\+node)
+\begin{DoxyCompactList}\small\item\em Function to create a \hyperlink{struct_list___node}{List\+\_\+\+Node} with a \hyperlink{struct_node}{Node} in parameter. \end{DoxyCompactList}\item 
+\hyperlink{struct_list___node}{List\+\_\+\+Node} $\ast$ \hyperlink{_huffman__tree_8c_a99234d1e6e9d21131f06dc7f4ef4919c}{create\+\_\+list\+\_\+node\+\_\+from\+\_\+element} (\hyperlink{struct_element}{Element} $\ast$list)
+\begin{DoxyCompactList}\small\item\em Function to create \hyperlink{struct_list___node}{List\+\_\+\+Node} with first element is a \hyperlink{struct_list___node}{List\+\_\+\+Node} element. \end{DoxyCompactList}\item 
+\hyperlink{struct_list___node}{List\+\_\+\+Node} $\ast$ \hyperlink{_huffman__tree_8c_a34620fe6b4de52bd588a37a6d9710bb8}{convert\+\_\+elem\+\_\+to\+\_\+\+Node} (\hyperlink{struct_element}{Element} $\ast$list)
+\begin{DoxyCompactList}\small\item\em Function to create a List of Liste\+\_\+\+Node from List of \hyperlink{struct_element}{Element}. \end{DoxyCompactList}\item 
+void \hyperlink{_huffman__tree_8c_a161297c990d0365c1bdae485b6ee24b9}{Add\+\_\+node\+\_\+beg} (\hyperlink{struct_list___node}{List\+\_\+\+Node} $\ast$$\ast$list\+\_\+node, \hyperlink{struct_node}{Node} $\ast$N\+O\+DE)
+\begin{DoxyCompactList}\small\item\em Function to add \hyperlink{struct_list___node}{List\+\_\+\+Node} at the beginning of a \hyperlink{struct_list___node}{List\+\_\+\+Node} List. \end{DoxyCompactList}\item 
+void \hyperlink{_huffman__tree_8c_a21fdd931c9da03eef28603b9ff7defd3}{trees\+\_\+log\+\_\+parents\+\_\+before\+\_\+children} (\hyperlink{struct_node}{Node} $\ast$tree)
+\begin{DoxyCompactList}\small\item\em Function used to print a tree in prefix order. \end{DoxyCompactList}\item 
+\hyperlink{struct_node}{Node} $\ast$ \hyperlink{_huffman__tree_8c_a71663b75a4e86a59c63e43e5eedada53}{huffman\+\_\+tree} (\hyperlink{struct_list___node}{List\+\_\+\+Node} $\ast$list\+\_\+node)
+\begin{DoxyCompactList}\small\item\em Function to create an huffman tree. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{_huffman__tree_8c_a161297c990d0365c1bdae485b6ee24b9}\label{_huffman__tree_8c_a161297c990d0365c1bdae485b6ee24b9}} 
+\index{Huffman\+\_\+tree.\+c@{Huffman\+\_\+tree.\+c}!Add\+\_\+node\+\_\+beg@{Add\+\_\+node\+\_\+beg}}
+\index{Add\+\_\+node\+\_\+beg@{Add\+\_\+node\+\_\+beg}!Huffman\+\_\+tree.\+c@{Huffman\+\_\+tree.\+c}}
+\subsubsection{\texorpdfstring{Add\+\_\+node\+\_\+beg()}{Add\_node\_beg()}}
+{\footnotesize\ttfamily void Add\+\_\+node\+\_\+beg (\begin{DoxyParamCaption}\item[{\hyperlink{struct_list___node}{List\+\_\+\+Node} $\ast$$\ast$}]{list\+\_\+node,  }\item[{\hyperlink{struct_node}{Node} $\ast$}]{N\+O\+DE }\end{DoxyParamCaption})}
+
+
+
+Function to add \hyperlink{struct_list___node}{List\+\_\+\+Node} at the beginning of a \hyperlink{struct_list___node}{List\+\_\+\+Node} List. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list\+\_\+node} & a \hyperlink{struct_list___node}{List\+\_\+\+Node} that contain \hyperlink{struct_node}{Node}. \\
+\hline
+{\em N\+O\+DE} & a \hyperlink{struct_node}{Node} that will become the data of the list\+\_\+node. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_huffman__tree_8c_a34620fe6b4de52bd588a37a6d9710bb8}\label{_huffman__tree_8c_a34620fe6b4de52bd588a37a6d9710bb8}} 
+\index{Huffman\+\_\+tree.\+c@{Huffman\+\_\+tree.\+c}!convert\+\_\+elem\+\_\+to\+\_\+\+Node@{convert\+\_\+elem\+\_\+to\+\_\+\+Node}}
+\index{convert\+\_\+elem\+\_\+to\+\_\+\+Node@{convert\+\_\+elem\+\_\+to\+\_\+\+Node}!Huffman\+\_\+tree.\+c@{Huffman\+\_\+tree.\+c}}
+\subsubsection{\texorpdfstring{convert\+\_\+elem\+\_\+to\+\_\+\+Node()}{convert\_elem\_to\_Node()}}
+{\footnotesize\ttfamily \hyperlink{struct_list___node}{List\+\_\+\+Node}$\ast$ convert\+\_\+elem\+\_\+to\+\_\+\+Node (\begin{DoxyParamCaption}\item[{\hyperlink{struct_element}{Element} $\ast$}]{list }\end{DoxyParamCaption})}
+
+
+
+Function to create a List of Liste\+\_\+\+Node from List of \hyperlink{struct_element}{Element}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list} & a list of element. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+List\+\_\+\+Node$\ast$ the converted list into \hyperlink{struct_list___node}{List\+\_\+\+Node}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_huffman__tree_8c_aaf6def10f6b6a363b0e9b254430312c7}\label{_huffman__tree_8c_aaf6def10f6b6a363b0e9b254430312c7}} 
+\index{Huffman\+\_\+tree.\+c@{Huffman\+\_\+tree.\+c}!create\+\_\+list\+\_\+node@{create\+\_\+list\+\_\+node}}
+\index{create\+\_\+list\+\_\+node@{create\+\_\+list\+\_\+node}!Huffman\+\_\+tree.\+c@{Huffman\+\_\+tree.\+c}}
+\subsubsection{\texorpdfstring{create\+\_\+list\+\_\+node()}{create\_list\_node()}}
+{\footnotesize\ttfamily \hyperlink{struct_list___node}{List\+\_\+\+Node}$\ast$ create\+\_\+list\+\_\+node (\begin{DoxyParamCaption}\item[{\hyperlink{struct_node}{Node} $\ast$}]{new\+\_\+node }\end{DoxyParamCaption})}
+
+
+
+Function to create a \hyperlink{struct_list___node}{List\+\_\+\+Node} with a \hyperlink{struct_node}{Node} in parameter. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+node} & a \hyperlink{struct_node}{Node} pointer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+List\+\_\+\+Node$\ast$ a list with a \hyperlink{struct_node}{Node} data. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_huffman__tree_8c_a99234d1e6e9d21131f06dc7f4ef4919c}\label{_huffman__tree_8c_a99234d1e6e9d21131f06dc7f4ef4919c}} 
+\index{Huffman\+\_\+tree.\+c@{Huffman\+\_\+tree.\+c}!create\+\_\+list\+\_\+node\+\_\+from\+\_\+element@{create\+\_\+list\+\_\+node\+\_\+from\+\_\+element}}
+\index{create\+\_\+list\+\_\+node\+\_\+from\+\_\+element@{create\+\_\+list\+\_\+node\+\_\+from\+\_\+element}!Huffman\+\_\+tree.\+c@{Huffman\+\_\+tree.\+c}}
+\subsubsection{\texorpdfstring{create\+\_\+list\+\_\+node\+\_\+from\+\_\+element()}{create\_list\_node\_from\_element()}}
+{\footnotesize\ttfamily \hyperlink{struct_list___node}{List\+\_\+\+Node}$\ast$ create\+\_\+list\+\_\+node\+\_\+from\+\_\+element (\begin{DoxyParamCaption}\item[{\hyperlink{struct_element}{Element} $\ast$}]{list }\end{DoxyParamCaption})}
+
+
+
+Function to create \hyperlink{struct_list___node}{List\+\_\+\+Node} with first element is a \hyperlink{struct_list___node}{List\+\_\+\+Node} element. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list} & first element of the list. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+List\+\_\+\+Node$\ast$ the element that has been converted into a \hyperlink{struct_list___node}{List\+\_\+\+Node}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_huffman__tree_8c_a9d1186428bbd983ffd985807e40c3a5a}\label{_huffman__tree_8c_a9d1186428bbd983ffd985807e40c3a5a}} 
+\index{Huffman\+\_\+tree.\+c@{Huffman\+\_\+tree.\+c}!create\+\_\+\+Node@{create\+\_\+\+Node}}
+\index{create\+\_\+\+Node@{create\+\_\+\+Node}!Huffman\+\_\+tree.\+c@{Huffman\+\_\+tree.\+c}}
+\subsubsection{\texorpdfstring{create\+\_\+\+Node()}{create\_Node()}}
+{\footnotesize\ttfamily \hyperlink{struct_node}{Node}$\ast$ create\+\_\+\+Node (\begin{DoxyParamCaption}\item[{\hyperlink{struct_list___node}{List\+\_\+\+Node} $\ast$}]{min1,  }\item[{\hyperlink{struct_list___node}{List\+\_\+\+Node} $\ast$}]{min2 }\end{DoxyParamCaption})}
+
+
+
+Function to create a node with an occurence value equal to sum of two minimum \hyperlink{struct_list___node}{List\+\_\+\+Node} occurrences. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em min1} & a \hyperlink{struct_list___node}{List\+\_\+\+Node} that contain the first minimum \hyperlink{struct_node}{Node}. \\
+\hline
+{\em min2} & a \hyperlink{struct_list___node}{List\+\_\+\+Node} that contain the second minimum \hyperlink{struct_node}{Node}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Node$\ast$ the new \hyperlink{struct_node}{Node}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_huffman__tree_8c_a97a3db3427a186ef388c738c6b11910f}\label{_huffman__tree_8c_a97a3db3427a186ef388c738c6b11910f}} 
+\index{Huffman\+\_\+tree.\+c@{Huffman\+\_\+tree.\+c}!create\+\_\+node\+\_\+from\+\_\+element@{create\+\_\+node\+\_\+from\+\_\+element}}
+\index{create\+\_\+node\+\_\+from\+\_\+element@{create\+\_\+node\+\_\+from\+\_\+element}!Huffman\+\_\+tree.\+c@{Huffman\+\_\+tree.\+c}}
+\subsubsection{\texorpdfstring{create\+\_\+node\+\_\+from\+\_\+element()}{create\_node\_from\_element()}}
+{\footnotesize\ttfamily \hyperlink{struct_node}{Node}$\ast$ create\+\_\+node\+\_\+from\+\_\+element (\begin{DoxyParamCaption}\item[{\hyperlink{struct_element}{Element} $\ast$}]{element }\end{DoxyParamCaption})}
+
+
+
+Function to create a node that has been converted from an element. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em element} & first element to be converted. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Node$\ast$ the element that has been converted into a \hyperlink{struct_node}{Node}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_huffman__tree_8c_a71663b75a4e86a59c63e43e5eedada53}\label{_huffman__tree_8c_a71663b75a4e86a59c63e43e5eedada53}} 
+\index{Huffman\+\_\+tree.\+c@{Huffman\+\_\+tree.\+c}!huffman\+\_\+tree@{huffman\+\_\+tree}}
+\index{huffman\+\_\+tree@{huffman\+\_\+tree}!Huffman\+\_\+tree.\+c@{Huffman\+\_\+tree.\+c}}
+\subsubsection{\texorpdfstring{huffman\+\_\+tree()}{huffman\_tree()}}
+{\footnotesize\ttfamily \hyperlink{struct_node}{Node}$\ast$ huffman\+\_\+tree (\begin{DoxyParamCaption}\item[{\hyperlink{struct_list___node}{List\+\_\+\+Node} $\ast$}]{list\+\_\+node }\end{DoxyParamCaption})}
+
+
+
+Function to create an huffman tree. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list\+\_\+node} & List that contain all character and their own occurrence. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Node$\ast$ the huffman tree. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_huffman__tree_8c_acbf0d3186ab4a1b077a3f0f963bae97f}\label{_huffman__tree_8c_acbf0d3186ab4a1b077a3f0f963bae97f}} 
+\index{Huffman\+\_\+tree.\+c@{Huffman\+\_\+tree.\+c}!list\+\_\+remove\+\_\+node@{list\+\_\+remove\+\_\+node}}
+\index{list\+\_\+remove\+\_\+node@{list\+\_\+remove\+\_\+node}!Huffman\+\_\+tree.\+c@{Huffman\+\_\+tree.\+c}}
+\subsubsection{\texorpdfstring{list\+\_\+remove\+\_\+node()}{list\_remove\_node()}}
+{\footnotesize\ttfamily void list\+\_\+remove\+\_\+node (\begin{DoxyParamCaption}\item[{\hyperlink{struct_list___node}{List\+\_\+\+Node} $\ast$$\ast$}]{list\+\_\+node,  }\item[{\hyperlink{struct_list___node}{List\+\_\+\+Node} $\ast$}]{min\+\_\+node }\end{DoxyParamCaption})}
+
+
+
+Function to remove a \hyperlink{struct_list___node}{List\+\_\+\+Node}. 
+
+\begin{DoxyNote}{Note}
+used to remove the minimum. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em list\+\_\+node} & a \hyperlink{struct_list___node}{List\+\_\+\+Node} that contain \hyperlink{struct_node}{Node}. \\
+\hline
+{\em min\+\_\+node} & a \hyperlink{struct_list___node}{List\+\_\+\+Node} that contain the minimum \hyperlink{struct_node}{Node}. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_huffman__tree_8c_a0af5331d55b45079167aa5395b32eceb}\label{_huffman__tree_8c_a0af5331d55b45079167aa5395b32eceb}} 
+\index{Huffman\+\_\+tree.\+c@{Huffman\+\_\+tree.\+c}!min\+\_\+list\+\_\+node@{min\+\_\+list\+\_\+node}}
+\index{min\+\_\+list\+\_\+node@{min\+\_\+list\+\_\+node}!Huffman\+\_\+tree.\+c@{Huffman\+\_\+tree.\+c}}
+\subsubsection{\texorpdfstring{min\+\_\+list\+\_\+node()}{min\_list\_node()}}
+{\footnotesize\ttfamily \hyperlink{struct_list___node}{List\+\_\+\+Node}$\ast$ min\+\_\+list\+\_\+node (\begin{DoxyParamCaption}\item[{\hyperlink{struct_list___node}{List\+\_\+\+Node} $\ast$}]{list\+\_\+node }\end{DoxyParamCaption})}
+
+
+
+Function to find minimum from a \hyperlink{struct_list___node}{List\+\_\+\+Node} List. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list\+\_\+node} & a \hyperlink{struct_list___node}{List\+\_\+\+Node} that contain \hyperlink{struct_node}{Node}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+List\+\_\+\+Node$\ast$ the minimum occurrence \hyperlink{struct_list___node}{List\+\_\+\+Node}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_huffman__tree_8c_a21fdd931c9da03eef28603b9ff7defd3}\label{_huffman__tree_8c_a21fdd931c9da03eef28603b9ff7defd3}} 
+\index{Huffman\+\_\+tree.\+c@{Huffman\+\_\+tree.\+c}!trees\+\_\+log\+\_\+parents\+\_\+before\+\_\+children@{trees\+\_\+log\+\_\+parents\+\_\+before\+\_\+children}}
+\index{trees\+\_\+log\+\_\+parents\+\_\+before\+\_\+children@{trees\+\_\+log\+\_\+parents\+\_\+before\+\_\+children}!Huffman\+\_\+tree.\+c@{Huffman\+\_\+tree.\+c}}
+\subsubsection{\texorpdfstring{trees\+\_\+log\+\_\+parents\+\_\+before\+\_\+children()}{trees\_log\_parents\_before\_children()}}
+{\footnotesize\ttfamily void trees\+\_\+log\+\_\+parents\+\_\+before\+\_\+children (\begin{DoxyParamCaption}\item[{\hyperlink{struct_node}{Node} $\ast$}]{tree }\end{DoxyParamCaption})}
+
+
+
+Function used to print a tree in prefix order. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tree} & a non N\+U\+LL tree. \\
+\hline
+\end{DoxyParams}
