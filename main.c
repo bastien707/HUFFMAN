@@ -15,7 +15,9 @@ int main(){
     
     ConvertTextToBin(texte);
     Element *list = occurrence(texte);
+    printf("seconds: ");
     List_Node *list_node = convert_elem_to_Node(list);
+    
     Node *huffman = huffman_tree(list_node);
     char *array = malloc(sizeof(char)* depth(huffman));
     HuffmanDictionary(huffman, array, index);
@@ -24,7 +26,7 @@ int main(){
 
     clock_t end = clock();
     time_spent += (double)(end - begin)/CLOCKS_PER_SEC;
-    printf("seconds : %fs\n", time_spent);
+    printf("%fs\n", time_spent);
 
     return 0;
 

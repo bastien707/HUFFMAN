@@ -13,15 +13,16 @@ void write_huffman_text(FILE *DIC, char c)
         {
             cur = fgetc(DIC);
         }
-        cur = fgetc(DIC);                            // go to the ':'
+        cur = fgetc(DIC);                            // go to ':'
         do
-        {                                            // write the array until the '\n'
-            cur = fgetc(DIC);
-            if (cur == 48 || cur == 49)
+        {      
+            cur = fgetc(DIC);                        // write the array until the '\n'
+            if (cur != '\n' && cur != ':')
             {
                 fputc(cur, Encode);
             }
-        } while (cur == 48 || cur == 49);
+            
+        } while (cur != '\n');
     }
     else
     {
@@ -36,7 +37,6 @@ void encoding()
     Texte = fopen("text/Input.txt", "r");           // open text file
     Dictionary = fopen("text/Dictionary.txt", "r"); // open an encode file (empty)
     int cur = 0;
-    unsigned i = 0;
 
     if (Texte != NULL)
     {
@@ -48,13 +48,6 @@ void encoding()
                 break;
             }
             write_huffman_text(Dictionary, cur);
-            i++;
-            if( i % 8 == 0){
-                FILE* Encode = fopen("text/Encode.txt", "a");
-                fputc('\n', Encode);
-                fclose(Encode);
-                i = 0;
-            }
         }
     }
     else
