@@ -47,13 +47,13 @@ We're constantly trying to beat these performances.
 
 ### Contributing 
 
-Pull requests are welcome. For major changes, 
-please open an issue first to discuss what you would like to change. 
+Pull requests are welcome. For major changes, <br />
+please open an issue first to discuss what you would like to change. <br />
 
 ### Authors
 
-Facqueur Bastien - [bastien707](https://github.com/bastien707)
-Kylian Artu-Lequint - [KA-L](https://github.com/KA-L) 
-Quentin Noiriel - [QuentinNoiriel](https://github.com/QuentinNoiriel) 
+Facqueur Bastien - [bastien707](https://github.com/bastien707) <br />
+Kylian Artu-Lequint - [KA-L](https://github.com/KA-L) <br />
+Quentin Noiriel - [QuentinNoiriel](https://github.com/QuentinNoiriel) <br />
 
 
