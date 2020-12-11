@@ -35,7 +35,9 @@ make clean
 ```
 ### Performances 
 
-#### Performed on Linux Core i5
+Performances updated December 11, 2020.
+
+#### Performed on Linux Core i5 
 
 | Characters | 143 826 | 575 312 | 1 150 622 | 2 588 884 | 9 061 095 |
 | :--------: | :-----: | :-----: | :-------: | :-------: | :-------: |
