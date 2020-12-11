@@ -24,20 +24,24 @@ Then you can use the following command to launch the program
 ```
 make
 ```
-And execute using 
+And execute using ('exec' is the default executable file, you can change it in the makefile)
 ```
 ./exec
 ```
-'exec' is the default executable file
+
 If you want to clean all text files except the input.txt, use this command
 ```
 make clean
 ```
+### Contributing 
+
+Pull requests are welcome. For major changes, <br />
+please open an issue first to discuss what you would like to change. <br />
 
 ### Authors
 
-Facqueur Bastien - [bastien707](https://github.com/bastien707)
-Kylian Artu-Lequint - [KA-L](https://github.com/KA-L)
-Quentin Noiriel - [QuentinNoiriel](https://github.com/QuentinNoiriel)
+Facqueur Bastien - [bastien707](https://github.com/bastien707) <br />
+Kylian Artu-Lequint - [KA-L](https://github.com/KA-L) <br />
+Quentin Noiriel - [QuentinNoiriel](https://github.com/QuentinNoiriel) <br />
 
 
